@@ -1,0 +1,122 @@
+<!--导入wxs模块,只能使用相对路径,并需要定义module-->
+<wxs src="filter.wxs" module="util"></wxs>
+
+<view style="position: absolute; left: 30rpx; top: {{statusBarHeight}}px; font-size: 18px; color: black">
+  请回答.团课
+</view>
+
+<!-- 状态栏 -->
+<!-- <view style='height: {{statusBarHeight}}px;'></view>  -->
+<!-- 标题栏 -->
+<!-- <view style='height: 44px;'>标题</view> -->
+
+<view class="swiper">
+
+  <swiper class='bannerGrid' previous-margin="60rpx" next-margin="60rpx" bindchange="bannerSwiper">
+
+    <swiper-item class="item" wx:for="{{ bannerData }}" wx:key="{{ index }}">
+      <view class="swiper-item">
+        <view class='boxItem column'>
+          <!-- 卡牌 -->
+          <view class="flipGroup  {{ item.isOpenFilp ? 'on':''}}" catchtap='switchFlip' data-index='{{ index }}'>
+            <view class="flipBox">
+              <!-- 正面内容 -->
+              <view class="sideWrap front">
+                <!-- 卡片 -->
+                <view class='posterGroup'>
+                  <view class='imgWrap'>
+                    <image class='img' src="{{ item.focus }}" mode="aspectFill"></image>
+
+                    <view class='detailBox'>
+                      <view class='mSmall f14 relative mb10'> {{ item.title }} </view>
+                      <view class='mSmall f14 relative mb10' style="font-size: 35px; top: 40px;">{{ item.week }}</view>
+                      <view class='mSmall f14 relative mb10' style="font-size: 15px; padding-top: 70px;">{{ item.weekeng }}</view>
+                    </view>
+                    <view class='detailBox1'>
+                      <view class='mSmall relative' style="bottom: 0;padding-bottom: 50px;font-size: 13px">点触以查看本周答案</view>
+                      <view class='mSmall relative' style="bottom: 0;">· {{ item.releaseDate }} ·</view>
+                    </view>
+                  </view>
+                </view>
+                <!-- / 卡片 -->
+              </view>
+              <!-- 背面内容 -->
+              <view class="sideWrap back">
+                <!-- detail -->
+                <view class='backGroup'>
+                  <image class='img' src="{{ item.img }}" mode="widthFix"></image>
+                  <view class='textWrap'>
+                    <!-- 视频习题（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;margin-right: 30px">{{util.format(item.blocklines1)}}</text>
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.lines3)}}</text>
+                    </view>
+                    <!-- 课后习题标题（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.blocklines2)}}</text>
+                    </view>
+                    <!-- 课后习题题号（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;margin-right: 95px">{{util.format(item.blocklines3)}}</text>
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.blocklines4)}}</text>
+                    </view>
+                    <!-- 课后习题答案（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;margin-right: 30px">{{util.format(item.lines1)}}</text>
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.lines2)}}</text>
+                    </view>
+                    <!-- 课后习题备用（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;margin-right: 95px">{{util.format(item.blocklines5)}}</text>
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.blocklines6)}}</text>
+                    </view>
+                    <!-- 课后习题备用（独立一行） -->
+                    <view class='mt10' style="display: flex;align-items: center;justify-content: center">
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;margin-right: 30px">{{util.format(item.lines4)}}</text>
+                      <text class='mTitle cf45 mb40' style="margin-top: 5px;font-size: 16px;">{{util.format(item.lines5)}}</text>
+                    </view>
+
+                  </view>
+                </view>
+                <view class='otherInfo'>
+                  <image class='iconFlag' src="{{ iconFlag }}" mode="widthFix"></image>
+                  <view class='movTitle'>
+                    <view>{{ item.sentences }}</view>
+                    <!-- <text class='score'>{{ item.score }}</text> -->
+                  </view>
+                  <view class='movTitle' style="float: right;">
+                    <view>---- \t {{ item.otherInfo }}</view>
+                  </view>
+                  <view class='copyright' style="margin-top: 20px">
+                    <view class='copyrightGrid'>
+                      <text class='span'>{{ copyrightText }}</text>
+                    </view>
+                  </view>
+                </view>
+
+
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </swiper-item>
+
+
+  </swiper>
+
+  <view class="bottom">
+    <view class="notice  {{ item.isInneedRead ? 'yesread':'noread'}}" style="position: fixed;bottom: 0;width: 99%;left: 0.5%;height:30px;line-height:30px;background-color: #009999;border-radius: 10px 10px 0 0" wx:for="{{ a1data }}">
+    {{util.format(item.updates)}}
+    </view>
+  </view>
+
+</view>
+
+
+<!-- 海报背景 -->
+<view class='poster'>
+  <view class='bgImg' style=" background: url({{ bannerData[bannerCurrent].focus }}); background-size:cover;"></view>
+  <view class='cover'></view>
+</view>

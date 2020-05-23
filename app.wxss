@@ -1,0 +1,34 @@
+/**app.wxss**/
+page { font-size: 28rpx; color: #333; box-sizing: border-box; }
+view, text, scroll-view, swiper, button, form, input, textarea, label, navigator, image { box-sizing: border-box;}
+button::after{ border: none; }
+
+.relative{ position: relative; }
+
+/* 标题 */
+.h1{ font-size: 48rpx; line-height: 60rpx; font-weight: bold; color: #333; }
+.h2{ font-size: 36rpx; line-height: 48rpx; font-weight: bold; color: #333; }
+.h3{ font-size: 32rpx; line-height: 36rpx; font-weight: bold; color: #333; }
+.h4{ font-size: 28rpx; line-height: 32rpx; font-weight: bold; color: #333; }
+.p{ font-size: 24rpx; line-height: 28rpx; color: #999; }
+
+.h1.normal, .h2.normal, .h3.normal, .h4.normal{ font-weight: normal; }
+.h1.c45, .h2.c45, .h3.c45, .h4.c45, .p.c45{ color: #454545; }
+.h1.white, .h2.white, .h3.white, .h4.white, .p.white{ color: #fff; }
+.textRight{ text-align: right; }
+.textLeft{ text-align: left; }
+.textCenter{ text-align: center; }
+
+.cfGreen{ color: #04ac71; }
+
+.mt10{ margin-top: 10rpx;}
+.mt20{ margin-top: 20rpx;}
+.mt30{ margin-top: 30rpx;}
+.mb10{ margin-bottom: 10rpx;}
+.mb20{ margin-bottom: 20rpx;}
+.mb30{ margin-bottom: 30rpx;}
+
+/* copyrightGrid */
+.copyrightGrid{ display: inline-flex; vertical-align:middle; text-align: center; align-items:center; margin-top: 10rpx; line-height: 24rpx; font-size: 20rpx; color: #d1c9bf; height: 24rpx; overflow: hidden;}
+.copyrightGrid .logo{ display: inline-flex; width: 24rpx; height: 24rpx; margin-right: 10rpx;}
+.copyrightGrid .span{ margin-right: 8rpx; font-size: 20rpx; color: #d1c9bf; }

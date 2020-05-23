@@ -1,0 +1,293 @@
+page {
+  height: 100vh;
+  background: #aaa;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.poster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(10px);
+  transform: scale(1.2);
+  overflow: hidden;
+}
+
+.poster .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.poster .bgImg {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  border: 0;
+}
+
+.iconFlag {
+  width: 30rpx;
+  height: 30rpx;
+  border: 0;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.mTitle {
+  font-size: 28rpx;
+  line-height: 36rpx;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.mSmall {
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color: #eee;
+}
+
+.mTitle.cf45, .mSmall.cf45 {
+  color: #454545;
+}
+
+.mTitle.cf9, .mSmall.cf9 {
+  color: #999;
+}
+
+.mTitle.cfRed {
+  color: #be0004;
+}
+
+.mSmall.f14 {
+  font-size: 28rpx;
+}
+
+.mSmall.cfGreen {
+  color: #04ac71;
+}
+
+.movTitle {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #777;
+  vertical-align: center;
+  justify-content: space-between;
+}
+
+.score {
+  color: #04ac71;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+/* 滑动区域 */
+
+swiper, .swiper, .swiper-item {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.boxItem {
+  display: flex;
+  text-align: center;
+  vertical-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 40rpx 100rpx;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.boxItem.p40 {
+  padding: 40rpx;
+}
+
+.text {
+  padding: 40rpx 100rpx;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* 海报展示图 */
+
+.posterGroup {
+  width: 600rpx;
+  min-height: 800rpx;
+  text-align: left;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.posterGroup .img {
+  width: 560rpx;
+  height: 857rpx; /*height: 857rpx;*/
+  border: 0;
+  border-radius: 8rpx;
+}
+
+.posterGroup .imgWrap {
+  position: relative;
+}
+
+.posterGroup .detailBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40rpx;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.posterGroup .detailBox1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 40rpx;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.posterGroup .mTitle {
+  color: #454545;
+}
+
+.posterGroup .mSmall {
+  color: #fff;
+}
+
+.posterGroup .tipsBtn {
+  position: absolute;
+  right: 0;
+  bottom: 80rpx;
+  background: #fff;
+  line-height: 30rpx;
+  height: 30rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  border-radius: 15rpx 0 0 15rpx;
+  overflow: hidden;
+}
+
+.posterGroup .tipsBtn .icon {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+}
+
+/* backGroup */
+
+.backGroup {
+  text-align: left;
+  font-size: 28rpx;
+  padding-bottom: 100rpx;
+}
+
+.backGroup .img {
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.backGroup .textWrap {
+  padding: 10rpx 20rpx;
+}
+
+.flagTips {
+  position: relative;
+  height: 40rpx;
+}
+
+.flagTips .left {
+  width: 40rpx;
+  border: 0;
+}
+
+.flagTips .right {
+  width: 40rpx;
+  border: 0;
+}
+
+.otherInfo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 30rpx;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+}
+
+.copyright {
+  border-top: 1rpx dotted #eee;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.flipGroup {
+  width: 600rpx;
+  height: 897rpx;
+  perspective: 3000rpx;
+}
+
+.flipBox {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+}
+
+.sideWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.sideWrap.front {
+  background: #fff;
+}
+
+.sideWrap.back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  padding: 20rpx;
+  background: #fff;
+}
+
+.flipGroup.on .flipBox {
+  transform: rotateY(180deg);
+}
+
+.movieGrid {
+  padding: 40rpx;
+}
